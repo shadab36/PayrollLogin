@@ -24,7 +24,7 @@ public class BrowserSetup{
 @BeforeClass
 	public static void before_Class() throws Exception {
 		log = Logger.getLogger(BeforeClass.class.getName());
-		property.load(new FileReader("F:\\ECOM_DemoTest\\Demo\\src\\main\\resources\\Configure.properties"));
+		property.load(new FileReader("F:\\ECOM_DemoTest\\Demo\\PayrollLogin\\src\\main\\resources\\Configure.properties"));
 		AppURL = property.getProperty("App_url");
 		local_chromebrowser = property.getProperty("local_chrome_browser");
 		local_chrome = property.getProperty("local_chrome");
