@@ -17,8 +17,9 @@ public class Login_Step_definition extends BrowserSetup {
 	// Open web site URl
 	@Given("^Open the application url\\.$")
 	public void open_the_website_url() throws Throwable {
-		driver.get("https://staging.payrollpanda.my");
+		driver.get(AppURL);
 		Thread.sleep(2000);
+		log.info("It's opening the website URL");
 	}
 
 	@Then("^Enter email address as \"([^\"]*)\"\\.$")
@@ -31,7 +32,7 @@ public class Login_Step_definition extends BrowserSetup {
 		wait.implictywait(driver);
 		webelement.sendKeys(email);
 		wait.implictywait(driver);
-
+		log.info("It's entering the user email Address");
 	}
 
 	@Then("^Enter the Password \"([^\"]*)\"\\.$")
@@ -43,7 +44,7 @@ public class Login_Step_definition extends BrowserSetup {
 		wait.implictywait(driver);
 		webelement.sendKeys(passwd);
 		wait.implictywait(driver);
-
+		log.info("It's entering the user password");
 	}
 
 	@Then("^Click on Login CTA\\.$")
@@ -53,6 +54,7 @@ public class Login_Step_definition extends BrowserSetup {
 		webelement.click();
 		wait.implictywait(driver);
 		Thread.sleep(2000);
+		log.info("Click on Login button");
 	}
 	@Then("^Verify user email \"([^\"]*)\" validation message for Email Address\\.$")
 	public void verify_user_email_validation_message_for_Email_Address(String email) throws Throwable {
@@ -80,7 +82,7 @@ public class Login_Step_definition extends BrowserSetup {
 				wait.implictywait(driver);
 			System.out.println(password_valid);
 			wait.implictywait(driver);
-			log.info("It's getting HTML5 validation message for email address using JS executor");
+			log.info("It's getting HTML5 validation message for password using JS executor");
 			 Assert.assertEquals(password_valid, pass);
 			wait.implictywait(driver);
 		} catch (NoSuchElementException NSEP) {
@@ -95,6 +97,7 @@ public class Login_Step_definition extends BrowserSetup {
 			wait.implictywait(driver);
 			 Assert.assertEquals(error, signin_error);
 			wait.implictywait(driver);
+			log.info("It's verify the user login credentials");
 		} catch (NoSuchElementException NF) {
 
 		}
@@ -109,6 +112,7 @@ public class Login_Step_definition extends BrowserSetup {
 		Assert.assertEquals(expectedTitle, actualTitle);
 		wait.implictywait(driver);
 		Thread.sleep(2000);
+		log.info("It's verify the page title");
 	}
 
 }
