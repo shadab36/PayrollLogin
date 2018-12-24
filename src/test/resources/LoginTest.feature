@@ -1,4 +1,4 @@
-@pyarollpand_loginTest
+@pyarollpand_loginTest 
 Feature: signin Test On Web Application 
 @invalidLogintest 
 Scenario: 
@@ -17,16 +17,18 @@ Scenario Outline: Data driving for invalid sign-in.
 		|test@@gmail.com     |         |A part following '@' should not contain the symbol '@'.                |Please fill out this field.|                                            | 
 		|test@gmail.com      |         |                                                                       |Please fill out this field.|                                            |
 		|test@gmail.com      |1234     |                                                                       |                           |Invalid email or password. Please try again.|
-		 
+		
 @validLogintest 
-Scenario Outline: valid data for SignIn
-  Given Open the application url. 
+Scenario Outline: valid data for SignIn 
+	Given Open the application url. 
 	Then Enter email address as "<EmailAddress>". 
 	Then Enter the Password "<Pass>". 
 	Then Click on Login CTA. 
 	Then Verify the page title Go To Dashboard. 
-	Examples:
-	|EmailAddress               |Pass      |
-	|amw.chhotusingh@gmail.com  | Test@123 |
+	Then Verify the logout button. 
+	Examples: 
+		|EmailAddress               |Pass      |
+		|amw.chhotusingh@gmail.com  | Test@123 |
+		
 		
 	

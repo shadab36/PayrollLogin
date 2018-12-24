@@ -104,7 +104,7 @@ public class Login_Step_definition extends BrowserSetup {
 	}
 	@Then("^Verify the page title Go To Dashboard\\.$")
 	public void verify_the_page_title_Go_To_Dashboard() throws Throwable {
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		String actualTitle = driver.getTitle();
 		wait.implictywait(driver);
 		String expectedTitle = "PayrollPanda: Dashboard";
@@ -113,6 +113,17 @@ public class Login_Step_definition extends BrowserSetup {
 		wait.implictywait(driver);
 		Thread.sleep(2000);
 		log.info("It's verify the page title");
+	}
+	
+	@Then("^Verify the logout button\\.$")
+	public void verify_logout_cta() throws InterruptedException {
+		webelement = driver.findElement(LoginObject.userprofile);
+		wait.implictywait(driver);
+		webelement.click();
+		wait.implictywait(driver);
+		webelement = driver.findElement(LoginObject.Logout);
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",webelement);
+		Thread.sleep(3000);
 	}
 
 }

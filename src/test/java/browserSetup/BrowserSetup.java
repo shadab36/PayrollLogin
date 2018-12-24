@@ -1,16 +1,13 @@
 package browserSetup;
-
 import java.io.FileReader;
 import java.util.Properties;
 import java.util.logging.Logger;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import webApp.CommonData;
 public class BrowserSetup{
 	public static WebDriver driver;
@@ -41,7 +38,8 @@ public class BrowserSetup{
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
 			driver.manage().window().maximize();
-			Thread.sleep(500);
+			Thread.sleep(1000);
+			
 			// if (browser.equalsIgnoreCase("firefox"))
 		}
 		else {
@@ -60,6 +58,7 @@ public class BrowserSetup{
 		Thread.sleep(2000);
 	}
 
-
 }
+
+
 
