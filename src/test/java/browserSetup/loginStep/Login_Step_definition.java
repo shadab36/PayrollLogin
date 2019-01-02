@@ -104,7 +104,7 @@ public class Login_Step_definition extends BrowserSetup {
 	}
 	@Then("^Verify the page title Go To Dashboard\\.$")
 	public void verify_the_page_title_Go_To_Dashboard() throws Throwable {
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		String actualTitle = driver.getTitle();
 		wait.implictywait(driver);
 		String expectedTitle = "PayrollPanda: Dashboard";

@@ -27,8 +27,8 @@ Scenario Outline: valid data for SignIn
 	Then Verify the page title Go To Dashboard. 
 	Then Verify the logout button. 
 	Examples: 
-		|EmailAddress               |Pass      |
-		|amw.chhotusingh@gmail.com  | Test@123 |
+		|EmailAddress               |Pass        |
+		|test.shadab@gmail.com      | Shadab@123 |
 		
 		
 	
