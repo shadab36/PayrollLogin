@@ -15,17 +15,6 @@ public class LoginObject {
 	public static By Logout=By.cssSelector("#side-menu li a[href='#logout']");
 	
 	
-//
-//
-//
-//			document.getElementsByClassName("js-email")[0].validationMessage
-//
-//
-//			Object s = js.executeScript("return document.getElementById('email_address').validationMessage");
-//					  wait.implictywait(driver);
-//				        System.out.println(s);
-//				        wait.implictywait(driver);
-//				         log.info("It's getting HTML5 validation message using JS executor");
-//							wait.implictywait(driver);
+
 
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import webApp.CommonData;
+import io.github.bonigarcia.wdm.WebDriverManager;
 public class BrowserSetup{
 	public static WebDriver driver;
 	public static String AppURL;
@@ -16,24 +16,20 @@ public class BrowserSetup{
 	public static String browserName;
 	public static Logger log;
 	public static WebElement webelement;
-	public static String local_chromebrowser;
 	public static String local_chrome;
 @BeforeClass
 	public static void before_Class() throws Exception {
 		log = Logger.getLogger(BeforeClass.class.getName());
 		property.load(new FileReader("F:\\ECOM_DemoTest\\Demo\\PayrollLogin\\src\\main\\resources\\Configure.properties"));
 		AppURL = property.getProperty("App_url");
-		local_chromebrowser = property.getProperty("local_chrome_browser");
 		local_chrome = property.getProperty("local_chrome");
-	
 		// on source lab setup
 		AppURL = property.getProperty("App_url");
 		System.out.println("Bname=====" + AppURL);
 
 		// if (browser.equalsIgnoreCase("chrome"))
-
 		if ((local_chrome.equals("yes"))) {
-			local_chromebrowser = System.setProperty(CommonData.Chrome_Name, CommonData.Chrome_Path);
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-notifications");
 			driver = new ChromeDriver(options);
