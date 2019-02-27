@@ -1,6 +1,7 @@
 package browserSetup.loginStep;
 
 import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,7 +19,7 @@ public class Login_Step_definition extends BrowserSetup {
 	@Given("^Open the application url\\.$")
 	public void open_the_website_url() throws Throwable {
 		driver.get(AppURL);
-		Thread.sleep(2000);
+	    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 	}
 
