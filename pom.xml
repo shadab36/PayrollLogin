@@ -61,6 +61,7 @@
     <artifactId>cucumber-reporting</artifactId>
     <version>4.0.0</version>
 </dependency>
+<<<<<<< HEAD
 <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
   </dependencies>
    <build>
@@ -80,3 +81,7 @@
 	    </plugins>
   </build>
 </project>
+=======
+  </dependencies>
+</project>
+>>>>>>> 8391346f00ed7ec8d42e97c0705840b227e05ee4
