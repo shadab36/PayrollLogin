@@ -53,7 +53,7 @@ public class BrowserSetup{
 //		}
 //		else {
 			
-//	System.out.println("platform does not provide");
+	System.out.println("platform does not provide");
 		
 		}
 			
