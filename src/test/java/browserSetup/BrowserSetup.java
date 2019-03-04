@@ -33,7 +33,7 @@ public class BrowserSetup{
 //		AppURL = property.getProperty("App_url");
 //		System.out.println("Bname=====" + AppURL);
 
-		// if (browser.equalsIgnoreCase("chrome"))
+//		 if (browser.equalsIgnoreCase("chrome"))
 //		if ((local_chrome.equals("yes"))) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
@@ -48,12 +48,12 @@ public class BrowserSetup{
 //			else if((local_FFbrowser.equals("yes"))) {
 //				WebDriverManager.firefoxdriver().setup();
 //			driver=new FirefoxDriver();
-		
-				Thread.sleep(1000);
+//		
+//				Thread.sleep(1000);
 //		}
 //		else {
 			
-	System.out.println("platform does not provide");
+//	System.out.println("platform does not provide");
 		
 		}
 			
