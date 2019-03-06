@@ -102,6 +102,7 @@ public class Login_Step_definition extends BrowserSetup {
 			wait.implictywait(driver);
 			 Assert.assertEquals(error, signin_error);
 			wait.implictywait(driver);
+			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 			log.info("It's verify the user login credentials");
 		} catch (NoSuchElementException NF) {
 
@@ -109,8 +110,9 @@ public class Login_Step_definition extends BrowserSetup {
 	}
 	@Then("^Verify the page title Go To Dashboard\\.$")
 	public void verify_the_page_title_Go_To_Dashboard() throws Throwable {
-	    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+	    
 		String actualTitle = driver.getTitle();
+		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		wait.implictywait(driver);
 		String expectedTitle = "PayrollPanda: Dashboard";
 		wait.implictywait(driver);
