@@ -5,6 +5,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import ObjectRepository.LoginObject;
 import browserSetup.BrowserSetup;
 import cucumber.api.java.en.Given;
@@ -106,7 +109,7 @@ public class Login_Step_definition extends BrowserSetup {
 	}
 	@Then("^Verify the page title Go To Dashboard\\.$")
 	public void verify_the_page_title_Go_To_Dashboard() throws Throwable {
-		Thread.sleep(6000);
+	    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		String actualTitle = driver.getTitle();
 		wait.implictywait(driver);
 		String expectedTitle = "PayrollPanda: Dashboard";
