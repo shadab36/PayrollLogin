@@ -1,5 +1,7 @@
 package browserSetup;
 
+
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -13,12 +15,13 @@ plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucum
 //plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
 
 
-public class TestRunn {
+public class TestRuner {
 
 	@BeforeClass
 	public static void beforeClass() throws Exception {
 		BrowserSetup.before_Class();
 	}
+
 	@AfterClass
 	public static void afterClass() throws Exception {
 		BrowserSetup.after_Class();
