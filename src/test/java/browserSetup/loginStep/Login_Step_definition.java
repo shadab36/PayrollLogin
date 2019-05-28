@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,6 +39,9 @@ public class Login_Step_definition extends BrowserSetup {
 		webelement.sendKeys(email);
 		wait.implictywait(driver);
 		log.info("It's entering the user email Address");
+		
+		
+		
 	}
 
 	@Then("^Enter the Password \"([^\"]*)\"\\.$")
@@ -58,7 +62,7 @@ public class Login_Step_definition extends BrowserSetup {
 		wait.implictywait(driver);
 		webelement.click();
 		wait.implictywait(driver);
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		log.info("Click on Login button");
 	}
 	@Then("^Verify user email \"([^\"]*)\" validation message for Email Address\\.$")
@@ -98,6 +102,8 @@ public class Login_Step_definition extends BrowserSetup {
 	@Then("^Verify user error \"([^\"]*)\" message for all invalid credentials\\.$")
 	public void verify_user_error_message_for_all_invalid_credentials(String error) throws Throwable {
 		try {
+			
+			
 			String signin_error = driver.findElement(LoginObject.error_val).getText();
 			wait.implictywait(driver);
 			 Assert.assertEquals(error, signin_error);
@@ -109,7 +115,8 @@ public class Login_Step_definition extends BrowserSetup {
 	}
 	@Then("^Verify the page title Go To Dashboard\\.$")
 	public void verify_the_page_title_Go_To_Dashboard() throws Throwable {
-		WebDriverWait wait1 = new WebDriverWait(driver, 40);
+		Thread.sleep(4000);
+//		WebDriverWait wait1 = new WebDriverWait(driver, 40);
 		String actualTitle = driver.getTitle();
 		String expectedTitle = "PayrollPanda: Dashboard";
 		wait.implictywait(driver);
