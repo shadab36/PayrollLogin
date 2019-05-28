@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-public class BrowserSetup{
+public class BrowserSetup{ 
 	public static WebDriver driver;
 	public static String AppURL;
 	public static Properties property = new Properties(System.getProperties());
