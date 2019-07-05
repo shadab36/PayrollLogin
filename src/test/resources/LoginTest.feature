@@ -27,7 +27,7 @@ Scenario Outline: Data driving for invalid sign-in.
 	Then Verify the logout button. 
 	Examples: 
 		|EmailAddress               |Pass        |
-		|test.shadab@gmail.com      | Shadab@123 |
+		|qaautomation@getnada.com   |QaTest1234  |
 		
 		
 	 

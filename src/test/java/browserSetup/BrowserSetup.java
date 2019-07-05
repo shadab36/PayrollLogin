@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 public class BrowserSetup{ 
@@ -45,7 +45,7 @@ public class BrowserSetup{
 			// if (browser.equalsIgnoreCase("chrome"))
 			else if((local_FFbrowser.equals("yes"))) {
 				WebDriverManager.firefoxdriver().setup();
-		//	driver=new FirefoxDriver();
+			driver=new FirefoxDriver();
 		
 				Thread.sleep(1000);
 		}

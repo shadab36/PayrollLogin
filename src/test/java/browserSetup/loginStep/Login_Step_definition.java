@@ -23,7 +23,7 @@ public class Login_Step_definition extends BrowserSetup {
 	@Given("^Open the application url\\.$")
 	public void open_the_website_url() throws Throwable {
 		
-		driver.get("https://staging.payrollpanda.my");
+		driver.get(AppURL);
 	    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
 	}
