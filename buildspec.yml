@@ -1,10 +1,5 @@
-image: maven:3.6.1
+version: 0.2
 
-pipelines:
-default:
-- step:
-name: compile and test
-image: maven:3.6.3
-trigger: automatic
-script:
-- mvn --projects '!test-api' clean install
+artifacts:
+  files:
+    - '**/*'
