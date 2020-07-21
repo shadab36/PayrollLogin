@@ -3,24 +3,23 @@ pipeline {
     agent any
     
    tools{
-       maven "M3"
+       maven "maven"
    }
    stages {
 
        stage ('Compile')
        steps{
        
-          sh "mvn clean compile"
+           "mvn clean compile"
        }
        stage("Test"){
           
         steps{
-          sh "mvn clean test"
+          "mvn clean test"
                 }
            }
         stage("Deploy"){
-          
-          sh "maven clean install"
+          "maven clean install"
         }
    }
 }
