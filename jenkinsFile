@@ -1,27 +1,42 @@
 pipeline {
+   agent any
 
-    agent any
-    
-   tools{
-       maven "maven"
+   tools {
+      // Install the Maven version configured as "M3" and add it to the path.
+      maven "M3"
    }
+
    stages {
+      stage('Build') {
+         steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/shadab36/PayrollLogin.git'
+            "mvn -Dmaven.test.failure.ignore=true clean compile"
+         }
+         }
+      stage("Test") {
+          steps {
+            git 'https://github.com/shadab36/PayrollLogin.git'
+             "mvn -Dmaven.test.failure.ignore=true clean test"
 
-       stage ('Compile')
-       steps{
-       
-           "mvn clean compile"
-       }
-       stage("Test"){
-          
-        steps{
-          "mvn clean test"
-                }
-           }
-        stage("Deploy"){
-          "maven clean install"
-        }
+          }
+
+      }
+      stage("Deploy") {
+          steps {
+            git 'https://github.com/shadab36/PayrollLogin.git'
+             "mvn -Dmaven.test.failure.ignore=true clean install"
+
+          }
+          post {
+              success {
+                  archiveArtifacts 'target/*.jar'
+              }
+
+          }
+
+
+      }
+
+      }
    }
-}
- 
- 
